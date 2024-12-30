@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.logo_container{
+  background-color:darkseagreen;
+  padding: 10px;
+  text-align: center;
+}
+
+.logo_container h1{
+  color: white;
+  font-family: "Quicksand";
+}
+
+.logo_container h2{
+  color: white;
+  font-family: "Quicksand";
+}
+
+.links{
+  background-color:rgb(223, 238, 238);
+  text-align: center;
+}
+
+.links li{
+  display: inline-block;
+  margin: 5px;
+  background-color: darkseagreen;
+  padding: 5px;
+  border-radius: 10px;
+  width: 70px;
+}
+
+.links li a{
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+}
+
+.links li a:hover{
+  color:green;
+}
+
+.regras{
+  background-color: rgb(237, 245, 245);
+  padding: 5px;
+}
+
+.regras h1{
+  font-size:1.5em;
+}
+
+.regras h2{
+  font-size: 1.05em;
+}
+
+.regras p{
+  font-size:small;
+}
+
+.regras li{
+  font-size: small;
+  margin-bottom: 2px;
+}
+
+.form_registro{
+  background-color: rgb(237, 245, 245);
+  padding: 15px;
+}
+
+.entrada_form_registro{
+  margin-bottom: 15px;
+}
+
+.entrada_form_registro input{
+  width: 35%;
+}
+
+.form_login{
+  background-color: rgb(237, 245, 245);
+  padding: 15px;
+}
+
+.entrada_form_login{
+  margin-bottom: 15px;
+}
+
+.entrada_form_login input{
+  width: 35%;
+}
+
+.assunto{
+  border: solid 1px black;
+  margin-bottom: 20px;
+  padding: 0px;
+  background-color: rgb(237, 245, 245);
+}
+
+.assunto h2{
+  background-color: darkseagreen;
+  font-size: larger;
+  padding:5px;
+  margin: 0;
+  color:white;
+}
+
+.assunto a{
+  text-decoration: none;
+  color: green;
+  font-size: medium;
+}
+
+.assunto p{
+  font-size: small;
+}
+
+.assunto li{
+  border-bottom: solid 1px black;
+  list-style-type: none;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.assunto ul{
+  padding: 0;
+  margin: 0;
+}
+
+.topicos{
+  border: solid 1px black;
+  margin-bottom: 20px;
+  padding: 0px;
+  background-color: rgb(237, 245, 245);
+}
+
+.topicos h2{
+  background-color: darkseagreen;
+  font-size: larger;
+  padding:5px;
+  margin: 0;
+  color:white;
+}
+
+.topicos a{
+  text-decoration: none;
+  color: green;
+  font-size: medium;
+}
+
+.topicos a{
+  text-decoration: none;
+  color: green;
+  font-size: medium;
+}
+
+.topicos li{
+  border-bottom: solid 1px black;
+  list-style-type: none;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.topicos ul{
+  padding: 0;
+  margin: 0;
+}
+
+.topicos p{
+  font-size: small;
+}
+
+.topico h1{
+  font-size: larger;
+}
+
+.topico p{
+  font-size: small;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.mensagem_topico{
+  white-space: pre-line;
+}
+
+.topico{
+  background-color: rgb(237, 245, 245);
+  padding: 5px;
+}
+
+.comentario{
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding: 10px;
+}
