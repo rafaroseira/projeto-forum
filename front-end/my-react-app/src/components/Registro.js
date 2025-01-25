@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function Registro() {
+
     const [mensagem, setMensagem] = useState(""); // Estado para mensagens
     const [tipoMensagem, setTipoMensagem] = useState(""); // "sucesso" ou "erro"
 

@@ -10,16 +10,15 @@ import com.example.api.model.Assunto;
 import com.example.api.model.Comentario;
 import com.example.api.model.Disciplina;
 import com.example.api.model.EnumRole;
-import com.example.api.model.ImagemComentario;
-import com.example.api.model.ImagemTopico;
-import com.example.api.model.Role;
+//import com.example.api.model.Role;
 import com.example.api.model.Topico;
 import com.example.api.model.Usuario;
 import com.example.api.repository.AssuntoRepository;
 //import com.example.api.repository.DisciplinaRepository;
 //import com.example.api.repository.RoleRepository;
 import com.example.api.repository.TopicoRepository;
-//import com.example.api.repository.UsuarioRepository;
+import com.example.api.repository.UsuarioRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Component
 public class DatabaseInitializer implements CommandLineRunner{
@@ -27,8 +26,8 @@ public class DatabaseInitializer implements CommandLineRunner{
     @Autowired
     private AssuntoRepository assuntoRepository;
 
-    /*@Autowired
-    private UsuarioRepository usuarioRepository;*/
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @Autowired
     private TopicoRepository topicoRepository;
@@ -72,13 +71,14 @@ public class DatabaseInitializer implements CommandLineRunner{
         assuntos.add(new Assunto("Instruções de utilização", "Veja aqui como você pode postar e utilizar os recursos do fórum. Saiba como fazer postagens inteligíveis e objetivas.", disciplinas.getLast()));
         assuntos = assuntoRepository.saveAll(assuntos);
 
-        List<Role> roles = new ArrayList<Role>();
-        roles.add(new Role(EnumRole.ADMIN));
-        roles.add(new Role(EnumRole.USER));
+        /*List<Role> roles = new ArrayList<Role>();
+        roles.add(new Role(EnumRole.ROLE_ADMIN));
+        roles.add(new Role(EnumRole.ROLE_USER));*/
         //roles = roleRepository.saveAll(roles);
 
-        Usuario usuario = new Usuario("admin1", "pass", "admin1@email.com",roles);
-        //usuario = usuarioRepository.save(usuario);
+        String senha = new BCryptPasswordEncoder().encode("pass");
+        Usuario usuario = new Usuario("admin1", senha, "admin1@email.com",EnumRole.ROLE_ADMIN);
+        usuario = usuarioRepository.save(usuario);
 
 
         List<Topico> topicos = new ArrayList<Topico>();
@@ -89,19 +89,16 @@ public class DatabaseInitializer implements CommandLineRunner{
                                 "Por que a afirmação 3 está correta?\r\n" + //
                                 "\r\n" + //
                                 "Gabarito : c) I e III", 
-            null, 
+            "https://i.servimg.com/u/f78/20/59/50/24/captur11.jpg", 
             assuntos.getFirst(),
             usuario, 
             null));
         topicos.add(new Topico("UFPR 2004", "Enunciado criativo",null,assuntos.get(3), usuario,null));
         topicos.add(new Topico("UFMG", "Qual o valor de x?", null,assuntos.get(3), usuario,null));
-        ImagemTopico imagemTopico1 = new ImagemTopico("https://i.servimg.com/u/f78/20/59/50/24/captur11.jpg", topicos.getFirst());
-        ImagemTopico imagemTopico2 = new ImagemTopico("https://i.servimg.com/u/f82/20/25/98/54/screen10.jpg", topicos.getFirst());
-
         
         Comentario comentario1 = new Comentario(
             "Etiam accumsan, nulla sed tempor pulvinar, libero nunc sodales ipsum, sed convallis ligula lectus in quam. Aenean orci mi, mollis eu egestas imperdiet, condimentum non lectus. Integer semper risus non urna semper scelerisque.", 
-            null, 
+            "https://2img.net/u/2713/85/25/58/avatars/248017-89.png", 
             usuario,
             topicos.getFirst());
         Comentario comentario2 = new Comentario(
@@ -122,12 +119,8 @@ public class DatabaseInitializer implements CommandLineRunner{
             null,
             usuario, 
             topicos.getFirst());
-        ImagemComentario imagemComentario1 = new ImagemComentario("https://2img.net/u/2713/85/25/58/avatars/248017-89.png", comentario1);
-        ImagemComentario imagemComentario2 = new ImagemComentario("https://2img.net/u/2713/85/25/58/avatars/264400-66.jpg", comentario1);
-        comentario1.setImagens(Arrays.asList(imagemComentario1,imagemComentario2));
 
         topicos.getFirst().setComentarios(Arrays.asList(comentario1,comentario2,comentario3));
-        topicos.getFirst().setImagens(Arrays.asList(imagemTopico1,imagemTopico2));
         topicos = topicoRepository.saveAll(topicos);
     }
 

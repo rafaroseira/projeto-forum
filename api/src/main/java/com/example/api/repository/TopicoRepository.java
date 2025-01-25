@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import com.example.api.dto.PreviewTopicoDTO;
 //import com.example.api.dto.TopicoDTO;
 import com.example.api.model.Topico;
+import com.example.api.model.Usuario;
 
 public interface TopicoRepository extends JpaRepository<Topico,Integer> {
     
@@ -17,4 +18,6 @@ public interface TopicoRepository extends JpaRepository<Topico,Integer> {
     TopicoDTO findById(@Param("id") int id);*/
 
     Topico findById(int id);
+
+    List<Topico> findByUsuario(Usuario usuario);
 }

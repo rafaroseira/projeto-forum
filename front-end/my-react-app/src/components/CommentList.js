@@ -7,18 +7,7 @@ function CommentList({comentarios}) {
         <div className="comentario" key={comment.id}>
           <p>por <strong>{comment.usuario}</strong></p>
           <p style={{whiteSpace:"pre-line"}}>{comment.mensagem}</p>
-          {comment.imagens.length > 0 && (
-            <>
-              {comment.imagens.map((imageUrl, index) => (
-                <img
-                  key={index}
-                  src={imageUrl}
-                  alt={`Comentário ${comment.id} Imagem ${index + 1}`}
-                  style={{ maxWidth: "200px", margin: "10px 5px 10px 5px",display:"block"}}
-                />
-              ))}
-            </>
-          )}
+          {comment.imagem != null && <img src={comment.imagem} alt="imagem" style={{maxWidth: "300px", margin: "10px", display:"block"}}/>}
         </div>
       ))}
     </div>

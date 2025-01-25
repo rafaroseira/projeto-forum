@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import {useParams} from "react-router-dom";
 import CommentList from "./CommentList";
+import PostarComentario from "./PostarComentario";
+import { useAuth } from "./Auth";
 
 const Topico = () => {
   const { id } = useParams();
   const [topic, setTopic] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const auth = useAuth();
 
   useEffect(() => {
     const fetchTopic = async () => {
@@ -35,20 +38,22 @@ const Topico = () => {
       <h1 style={{color:"green"}}>{topic.titulo}</h1>
       <p style={{fontSize:"12px"}}>por <strong>{topic.usuario}</strong></p>
       <p className="mensagem_topico">{topic.mensagem}</p>
-      <div>
-        {topic.imagens.map((imageUrl, index) => (
-          <img 
-            key={index}
-            src={imageUrl}
-            alt={`Imagem ${index + 1}`}
-            style={{ maxWidth: "300px", margin: "10px", display:"block" }}
-          />
-        ))}
-      </div>
+      {topic.imagem != null && <img src={topic.imagem} alt="imagem" style={{maxWidth: "300px", margin: "10px", display:"block"}}/>}
       
+      {auth.user && <PostarComentario topico={id}/>}
+
       <CommentList comentarios={topic.comentarios}/>
     </div>
   );
 };
 
 export default Topico;
+
+/*{topic.imagens.map((imageUrl, index) => (
+          <img 
+            key={index}
+            src={imageUrl}
+            alt={`Imagem ${index + 1}`}
+            style={{ maxWidth: "300px", margin: "10px", display:"block" }}
+          />
+        ))} */

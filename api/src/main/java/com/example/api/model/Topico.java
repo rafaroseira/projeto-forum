@@ -27,10 +27,10 @@ public class Topico {
     @Column(nullable = false, length = 2000)
     private String mensagem;
 
-    @OneToMany(mappedBy = "topico", cascade = CascadeType.ALL)
-    private List<ImagemTopico> imagens;
+    @Column(nullable = true, length = 100)
+    private String imagem;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {}, fetch = FetchType.LAZY) //trocado o cascade para {}
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
@@ -81,13 +81,13 @@ public class Topico {
         this.usuario = usuario;
     }
 
-    public List<ImagemTopico> getImagens() {
-        return imagens;
+    public String getImagem() {
+        return imagem;
     }
 
-    public void setImagens(List<ImagemTopico> imagens) {
-        this.imagens = imagens;
-    } 
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
 
     public List<Comentario> getComentarios() {
         return comentarios;
@@ -97,12 +97,11 @@ public class Topico {
         this.comentarios = comentarios;
     }
 
-
-    public Topico(String titulo, String mensagem, List<ImagemTopico> imagens, Assunto assunto, 
+    public Topico(String titulo, String mensagem, String imagem, Assunto assunto, 
             Usuario usuario, List<Comentario> comentarios) {
         this.titulo = titulo;
         this.mensagem = mensagem;
-        this.imagens = imagens;
+        this.imagem = imagem;
         this.usuario = usuario;
         this.assunto = assunto;
         this.comentarios = comentarios;

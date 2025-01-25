@@ -7,10 +7,12 @@ import Assuntos from "./components/Assuntos";
 import PreviewTopicos from "./components/PreviewTopicos";
 import {Route, Routes} from "react-router-dom";
 import Topico from "./components/Topico";
+import { AuthProvider } from "./components/Auth";
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
         <Header/>
         <Navbar/>
         <Routes>
@@ -21,7 +23,8 @@ function App() {
           <Route path="/topicos/assunto/:id" element={<PreviewTopicos/>}></Route>
           <Route path="/topico/:id" element={<Topico/>}></Route>
         </Routes>
-      </div>
+      </AuthProvider>
+    </div>
   );
 }
 
