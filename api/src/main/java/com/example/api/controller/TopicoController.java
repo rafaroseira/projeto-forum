@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class TopicoController {
@@ -59,5 +58,11 @@ public class TopicoController {
             return new ResponseEntity<String>("Não foi possível excluir o tópico", HttpStatus.BAD_REQUEST);
         }
     }
+
+    @GetMapping("/admin/todos-os-topicos")
+    public List<VisualizarTopicosDTO> todosOsTopicos() {
+        return topicoService.recuperarTodosOsTopicos();
+    }
+    
     
 }

@@ -1,21 +1,15 @@
 package com.example.api.model;
 
-//import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-//import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-//import jakarta.persistence.JoinColumn;
-//import jakarta.persistence.JoinTable;
-//import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import java.util.Collection;
 import java.util.HashSet;
-//import java.util.List;
 import java.util.Set;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -39,14 +33,6 @@ public class Usuario implements UserDetails{
 
     @Column(nullable = false, length=45, unique = true)
     private String email;
-
-    /*@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER) //many-to-many unidirecional
-    @JoinTable(
-        name = "roles_usuarios",
-        joinColumns = @JoinColumn(name = "id_usuario", referencedColumnName = "id"),
-        inverseJoinColumns = @JoinColumn(name = "id_role", referencedColumnName = "id")
-    )
-    private List<Role> roles;*/
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -76,20 +62,20 @@ public class Usuario implements UserDetails{
         this.senha = senha;
     }
 
-    /*public List<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
-    }*/
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public EnumRole getRole() {
+        return role;
+    }
+
+    public void setRole(EnumRole role) {
+        this.role = role;
     }
 
     public Usuario() {
@@ -105,10 +91,6 @@ public class Usuario implements UserDetails{
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<SimpleGrantedAuthority> authorities = new HashSet<>();
-        /*for (Role role : this.roles) {
-            authorities.add(new SimpleGrantedAuthority(role.getNomeRole().name()));
-        }
-        return authorities;*/
         authorities.add(new SimpleGrantedAuthority(role.name()));
         return authorities;
     }

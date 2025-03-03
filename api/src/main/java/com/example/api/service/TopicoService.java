@@ -102,6 +102,17 @@ public class TopicoService {
     }
 
     @Transactional
+    public List<VisualizarTopicosDTO> recuperarTodosOsTopicos(){
+        List<Topico> topicos = topicoRepository.findAll();
+        List<VisualizarTopicosDTO> topicosDTO = new ArrayList<VisualizarTopicosDTO>();
+        for(Topico topico : topicos){
+            topicosDTO.add(new VisualizarTopicosDTO(topico.getId(), topico.getTitulo(), topico.getAssunto().getNome(), topico.getUsuario().getUsername()));
+        }
+
+        return topicosDTO;
+    }
+
+    @Transactional
     public boolean excluirTopico(int id){
         try{
             Topico topico = topicoRepository.findById(id);

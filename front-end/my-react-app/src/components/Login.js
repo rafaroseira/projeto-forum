@@ -6,11 +6,10 @@ function Login(){
 
     const auth = useAuth();
     const navigate = useNavigate();
-    const [mensagem, setMensagem] = useState(""); // Estado para mensagens
-    const [tipoMensagem, setTipoMensagem] = useState(""); // "sucesso" ou "erro"
+    const [mensagem, setMensagem] = useState("");
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Evita o comportamento padrão do formulário
-        setMensagem(""); // Limpa a mensagem anterior
+        e.preventDefault();
+        setMensagem("");
 
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries());
@@ -27,19 +26,13 @@ function Login(){
             if (response.ok) {
                 const user = await response.json();
                 auth.login(user);
-                navigate("/");
-                setMensagem("Login efetuado com sucesso!");
-                setTipoMensagem("sucesso");
+                navigate("/", {replace:true});
             } else {
                 setMensagem("Falha ao efetuar login!");
-                setTipoMensagem("erro");
             }
-
-
 
         } catch (error) {
             setMensagem("Erro ao conectar com o servidor.");
-            setTipoMensagem("erro");
         }
     };
 
@@ -59,16 +52,7 @@ function Login(){
 
             <input type="submit" value="Entrar"/>
 
-            {mensagem && (
-                <div
-                    style={{
-                        color: tipoMensagem === "sucesso" ? "green" : "red",
-                        marginTop: "10px",
-                    }}
-                >
-                    {mensagem}
-                </div>
-            )}
+            {mensagem}
         </form>
 
     );

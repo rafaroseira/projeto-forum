@@ -17,7 +17,7 @@ const PostarComentario = ({topico}) => {
         const payload = {
             idTopico: topico,
             mensagem: mensagem,
-            imagem: imagem.trim() || null, // Se vazio, será enviado como null
+            imagem: imagem.trim() || null,
         };
 
         try {
@@ -34,7 +34,6 @@ const PostarComentario = ({topico}) => {
                 throw new Error('Erro ao enviar o comentário.');
             }
 
-            console.log(response.text());
             setMensagem('');
             setImagem('');
         } catch (err) {
@@ -43,15 +42,15 @@ const PostarComentario = ({topico}) => {
     };
 
     return (
-        <div>
+        <div className='postar_comentario'>
             <form onSubmit={handleSubmit}>
                 <div> 
                     <textarea
                         placeholder='Escreva um comentário'
                         value={mensagem}
                         onChange={(e) => setMensagem(e.target.value)}
-                        rows="20"
-                        cols="100"
+                        rows="10"
+                        cols="50"
                         name='mensagem'
                         required
                     ></textarea>
@@ -63,14 +62,14 @@ const PostarComentario = ({topico}) => {
                         type="url"
                         value={imagem}
                         onChange={(e) => setImagem(e.target.value)}
-                        placeholder="Link da imagem (opcional)"
+                        placeholder="Adicione uma imagem ao comentário (opcional)"
                         name='imagem'
                     />
                 </div>
 
                 {error && <p style={{ color: 'red' }}>{error}</p>}
 
-                <button type="submit">Enviar</button>
+                <button type="submit" className='botao enviar'>Enviar</button>
             </form>
         </div>
     );

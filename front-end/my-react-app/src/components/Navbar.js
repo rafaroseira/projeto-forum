@@ -17,7 +17,11 @@ function Navbar() {
         <li><Link to="/regras">Regras</Link></li>
         {auth.user != null ? (
           <>
-            <button onClick={handleLogout}>Logout</button>
+            <li><Link to="/meus-topicos">Meus Tópicos</Link></li>
+            <li><Link to="/criar-topico">Criar Tópico</Link></li>
+            <li><Link to="/topicos">Tópicos {"(admins)"}</Link></li>
+            <li><Link to="/usuarios">Usuários {"(admins)"}</Link></li>
+            <button onClick={handleLogout} className="botao sair">Sair</button>
           </>
         ) : (
           <>
