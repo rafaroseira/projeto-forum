@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.logo_container{
+  background-color:darkseagreen;
+  padding: 10px;
+  text-align: center;
+}
+
+.logo_container h1{
+  color: white;
+  font-family: "Quicksand";
+}
+
+.logo_container h2{
+  color: white;
+  font-family: "Quicksand";
+}
+
+.links{
+  background-color:rgb(223, 238, 238);
+  text-align: center;
+}
+
+.links li{
+  display: inline-block;
+  margin: 5px;
+  background-color: darkseagreen;
+  padding: 5px;
+  border-radius: 10px;
+  width: 110px;
+}
+
+.links li a{
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+}
+
+.links li a:hover{
+  color: green;
+}
+
+.regras{
+  background-color: rgb(237, 245, 245);
+  padding: 5px;
+}
+
+.regras h1{
+  font-size:1.5em;
+}
+
+.regras h2{
+  font-size: 1.05em;
+}
+
+.regras p{
+  font-size:small;
+}
+
+.regras li{
+  font-size: small;
+  margin-bottom: 2px;
+}
+
+.assunto{
+  border: solid 1px black;
+  margin-bottom: 20px;
+  padding: 0px;
+  background-color: rgb(237, 245, 245);
+}
+
+.assunto h2{
+  background-color: darkseagreen;
+  font-size: larger;
+  padding:5px;
+  margin: 0;
+  color:white;
+}
+
+.assunto a{
+  text-decoration: none;
+  color: green;
+  font-size: medium;
+}
+
+.assunto p{
+  font-size: small;
+}
+
+.assunto li{
+  border-bottom: solid 1px black;
+  list-style-type: none;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.assunto ul{
+  padding: 0;
+  margin: 0;
+}
+
+.topicos{
+  border: solid 1px black;
+  margin-bottom: 20px;
+  padding: 0px;
+  background-color: rgb(237, 245, 245);
+}
+
+.topicos h2{
+  background-color: darkseagreen;
+  font-size: larger;
+  padding:5px;
+  margin: 0;
+  color:white;
+}
+
+.topicos a{
+  text-decoration: none;
+  color: green;
+  font-size: medium;
+}
+
+.topicos a{
+  text-decoration: none;
+  color: green;
+  font-size: medium;
+}
+
+.topicos li{
+  border-bottom: solid 1px black;
+  list-style-type: none;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.topicos ul{
+  padding: 0;
+  margin: 0;
+}
+
+.topicos p{
+  font-size: small;
+}
+
+.topico h1{
+  font-size: larger;
+}
+
+.topico p{
+  font-size: small;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.mensagem_topico{
+  white-space: pre-line;
+}
+
+.topico{
+  background-color: rgb(237, 245, 245);
+  padding: 5px;
+}
+
+.comentario{
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.formulario_topico {
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.formulario_topico h1 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.formulario_topico label {
+  font-size: 1rem;
+  color: #444;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.formulario_topico input[type="text"],
+.formulario_topico input[type="url"],
+.formulario_topico textarea,
+.formulario_topico select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.formulario_topico input[type="text"]:focus,
+.formulario_topico input[type="url"]:focus,
+.formulario_topico textarea:focus,
+.formulario_topico select:focus {
+  border-color: green;
+  outline: none;
+}
+
+.formulario_topico textarea {
+  resize: none;
+}
+
+.formulario_topico button {
+  background-color: darkseagreen;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.formulario_topico button:hover {
+  background-color: rgb(66, 150, 66);
+}
+
+.form_login {
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.form_login p {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.entrada_form_login {
+  margin-bottom: 1.5rem;
+}
+
+.form_login label {
+  font-size: 1rem;
+  color: #444;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form_login input[type="text"],
+.form_login input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form_login input[type="text"]:focus,
+.form_login input[type="password"]:focus {
+  border-color: green;
+  outline: none;
+}
+
+.form_login input[type="submit"] {
+  background-color: darkseagreen;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.form_login input[type="submit"]:hover {
+  background-color: rgb(66, 150, 66);
+}
+
+.form_login div {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.form_registro {
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.form_registro p {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.entrada_form_registro {
+  margin-bottom: 1.5rem;
+}
+
+.form_registro label {
+  font-size: 1rem;
+  color: #444;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form_registro input[type="text"],
+.form_registro input[type="email"],
+.form_registro input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form_registro input[type="text"]:focus,
+.form_registro input[type="email"]:focus,
+.form_registro input[type="password"]:focus {
+  border-color: green;
+  outline: none;
+}
+
+.form_registro input[type="submit"] {
+  background-color: darkseagreen;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+}
+
+.form_registro input[type="submit"]:hover {
+  background-color: rgb(66,150,66);
+}
+
+
+.form_registro div {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabela thead {
+  background-color: darkseagreen;
+  color: white;
+}
+
+.tabela th {
+  padding: 12px 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.tabela tbody tr {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela td {
+  padding: 10px 15px;
+  text-align: center;
+  color: #333;
+}
+
+.tabela tbody tr:hover {
+  background-color: #e9e9e9;
+}
+
+.botao {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botao.visualizar {
+  background-color: darkseagreen;
+  color: white;
+}
+
+.botao.visualizar:hover {
+  background-color: rgb(66,150,66);
+  transform: scale(1.05);
+}
+
+.botao.excluir {
+  background-color: crimson;
+  color: white;
+}
+
+.botao.excluir:hover {
+  background-color: red;
+  transform: scale(1.05);
+}
+
+.botao.sair,
+.botao.enviar{
+  font-size: small;
+  margin-left: 5px;
+  font-weight: normal;
+}
+
+.botao.sair:hover,
+.botao.enviar:hover{
+  transform: scale(1.05);
+  background-color: #ccc;
+}
+
+.postar_comentario textarea,
+.postar_comentario input{
+  padding: 10px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  resize: none;
+}
+
+.postar_comentario textarea:focus,
+.postar_comentario input:focus{
+  border-color: green;
+  outline: none;
+}
+
+.postar_comentario input{
+  width: 510px;
+}
